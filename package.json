@@ -1,0 +1,29 @@
+{
+  "name": "import-dryrun-framework",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Transactional import dry-run framework: map/clean/validate/natural-key/upsert inside one forced-ROLLBACK transaction, field-level diff, in-file duplicate detection, fingerprint-gated formal import. React + Vite + Express + Playwright.",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "mock": "node mock-server/index.js",
+    "dev:all": "concurrently -k \"npm:mock\" \"npm:dev\"",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "test": "playwright test",
+    "test:unit": "node --test tests/dryrun.test.js",
+    "perf": "node tests/perf.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.0.7"
+  },
+  "license": "MIT"
+}
